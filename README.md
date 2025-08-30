@@ -1,2 +1,17 @@
-# ARSWLAB03
-Repositorio donde se lleva a cabo el desarrollo del tercer laboratorio de ARSW
+# Laboratorio - Componentes y conectores - Parte I.
+## Autor - Sebastian Galvis Briceño
+
+
+# Taller – Principio de Inversión de dependencias, Contenedores Livianos e Inyección de dependencias.
+
+## Parte 1 - Ejercicio básico
+
+Para ilustrar el uso del framework Spring, y el ambiente de desarrollo para el uso del mismo a través de Maven (y NetBeans), se hará la configuración de una aplicación de análisis de textos, que hace uso de un verificador gramatical que requiere de un corrector ortográfico. A dicho verificador gramatical se le inyectará, en tiempo de ejecución, el corrector ortográfico que se requiera (por ahora, hay dos disponibles: inglés y español).
+
+1. Abra el los fuentes del proyecto en NetBeans.
+   ![img.png](img/ss1.png)
+2. Revise el archivo de configuración de Spring ya incluido en el proyecto (src/main/resources). El mismo indica que Spring buscará automáticamente los 'Beans' disponibles en el paquete indicado.
+
+3. Haciendo uso de la configuración de Spring basada en anotaciones marque con las anotaciones @Autowired y @Service las dependencias que deben inyectarse, y los 'beans' candidatos a ser inyectadas -respectivamente-:
+   * GrammarChecker será un bean, que tiene como dependencia algo de tipo 'SpellChecker'. 
+   * EnglishSpellChecker y SpanishSpellChecker son los dos posibles candidatos a ser inyectados. Se debe seleccionar uno, u otro, mas NO ambos (habría conflicto de resolución de dependencias). Por ahora haga que se use EnglishSpellChecker.
