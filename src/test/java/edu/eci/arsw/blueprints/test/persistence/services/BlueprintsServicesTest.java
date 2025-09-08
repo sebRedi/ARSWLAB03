@@ -35,7 +35,7 @@ public class BlueprintsServicesTest {
     @Test
     public void testGetBlueprintsByAuthorWithUnderamplingFilter() throws Exception {
         InMemoryBlueprintPersistence memory = new InMemoryBlueprintPersistence();
-        Filter undersampling = new UndersamplingFilter(); // tu filtro real
+        Filter undersampling = new UndersamplingFilter(); // filtro real
         BlueprintsServices services = new BlueprintsServices(memory, undersampling);
 
         // Creamos un plano con 4 puntos
